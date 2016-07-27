@@ -1,0 +1,150 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ababab"
+            android:gravity="center"
+            android:text="关于本应用"
+            android:textSize="14dp" />
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/back" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <com.cuiweiyou.interviewspitslot.view.CircleImageView
+                android:id="@+id/cvu"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/avrter"
+                app:civ_border_color="#333333"
+                app:civ_border_width="2dp" />
+
+            <TextView
+                android:id="@+id/cuiweiyou"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:background="#77cfcfcf"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="作者：崔维友" />
+
+            <TextView
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:background="#77cfcfcf"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="邮箱：vigiles@163.com" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:background="#77cfcfcf"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="站点：cuiweiyou.com" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="20dp"
+                android:background="#77cfcfcf"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="这是一个开源项目\nhttps://git.oschina.net/vigiles/InterviewSpitslot" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#77cfcfcf"
+                android:orientation="vertical" >
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="鸣谢："
+                    android:textStyle="bold|italic" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="开源圆形图片：\nhttps://github.com/hdodenhof/CircleImageView" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="xUtils：\nhttps://github.com/731942771/xUtils" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="fastjson：\nhttps://github.com/alibaba/fastjson" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="10dp"
+                    android:text="动画缓动库：\nhttps://github.com/Fichardu/EaseAnimationInterpolator" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/disclaimer"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:background="#77cfcfcf"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="免责声明..." />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

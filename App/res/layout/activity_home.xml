@@ -1,0 +1,130 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#cfcfcf"
+            android:gravity="center_vertical"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="2dp"
+                android:src="@drawable/ic_launcher" />
+
+            <TextView
+                android:id="@+id/search"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/ic_search_et"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:textSize="14dp"
+                android:text="搜索一下吧（逗你的）" />
+
+            <ImageView
+                android:id="@+id/setting"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:src="@drawable/ic_setting" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="9"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3"
+                android:orientation="vertical" >
+
+                <com.cuiweiyou.interviewspitslot.view.BannerPager
+                    android:id="@+id/articlepager"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                
+                <TextView 
+                    android:id="@+id/articlepager_mask"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:text="有文采的骚年像国民岳父一样稀缺"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7"
+                android:background="#cecece"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <ListView
+                    android:id="@+id/lv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+                
+                <TextView 
+                    android:id="@+id/lv_mask"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:text="最近口水有点稀缺"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/dialog"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#bb000000"
+        android:visibility="gone" >
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/ico_article"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_article"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/ico_spitslot"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_spitslot"
+        android:visibility="invisible" />
+
+    <ImageView
+        android:id="@+id/add_spitslot_and_article"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_add_spitslot" />
+
+</RelativeLayout>

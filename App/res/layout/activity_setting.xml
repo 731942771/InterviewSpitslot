@@ -1,0 +1,148 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#aeaeae"
+            android:gravity="center"
+            android:text="个人设置"
+            android:textSize="16dp" />
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:src="@drawable/back" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:id="@+id/containear"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:orientation="vertical"
+            android:padding="10dp" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:paddingLeft="10dp"
+                        android:text="昵称：" />
+
+                    <EditText
+                        android:id="@+id/nickname"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:hint="颜值王/射手/喷泉/骚年" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="right"
+                    android:text="你可以随时改变这个nickname，不排除多人同名的可能"
+                    android:textColor="#ababab"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <CheckBox
+                android:id="@+id/check_wifi"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:text="启动不提示非wifi网络" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="#cfcfcf"
+                android:orientation="vertical"
+                android:paddingLeft="10dp" >
+
+                <CheckBox
+                    android:id="@+id/check_update"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:text="启动自动检测更新" />
+
+                <CheckBox
+                    android:id="@+id/check_update_onlywifi"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:text="仅wifi下 自动检测更新" />
+
+                <CheckBox
+                    android:id="@+id/accept_updatepull"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_vertical"
+                    android:text="接收更新推送"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/feedback"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="反馈建议" />
+
+            <TextView
+                android:id="@+id/checkupdate"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="检查更新" />
+
+            <TextView
+                android:id="@+id/about"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:paddingLeft="10dp"
+                android:text="关于" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
