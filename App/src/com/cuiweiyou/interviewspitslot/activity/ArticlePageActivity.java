@@ -112,7 +112,7 @@ public class ArticlePageActivity extends Activity implements CountBack {
 				
 				try {
 					int cc = Integer.parseInt(count);
-					++ cc;
+					cc += 1 ;
 					mPraisecount.setText(cc + "");
 					
 					map.put("count", count);

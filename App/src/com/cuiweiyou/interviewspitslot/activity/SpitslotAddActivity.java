@@ -15,7 +15,6 @@ import com.cuiweiyou.interviewspitslot.bean.StationBean;
 import com.cuiweiyou.interviewspitslot.task.CompanyListTask;
 import com.cuiweiyou.interviewspitslot.task.SpitslotPostTask;
 import com.cuiweiyou.interviewspitslot.task.StationListTask;
-import com.cuiweiyou.interviewspitslot.task.UserCheckTask;
 import com.cuiweiyou.interviewspitslot.util.DatetimeUtil;
 import com.cuiweiyou.interviewspitslot.util.JsonUtil;
 import com.cuiweiyou.interviewspitslot.util.ScreenUtil;
@@ -26,10 +25,8 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.os.Bundle;
 import android.text.Editable;
-import android.view.Gravity;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewGroup.LayoutParams;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -38,8 +35,6 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.PopupWindow;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -158,7 +153,7 @@ public class SpitslotAddActivity extends Activity implements CompanyListBack, On
 		mWordcount.setText((120 - count) + "");
 		
 		if(count > 119){
-			Toast.makeText(RootApplication.getAppContext(), "才子你文思泉涌妙笔生花喷技凌人啊", 0).show();
+			Toast.makeText(RootApplication.getAppContext(), "话不在多，多说无益", 0).show();
 		}
 	}
 
@@ -371,9 +366,9 @@ public class SpitslotAddActivity extends Activity implements CompanyListBack, On
 		String user_name = SharedPrefUtil.getUserName();
 		String date_view = DatetimeUtil.getNowDate();
 		String description = spi; // 口水
-		String praise_count = "";
+		String praise_count = "0";
 		String record_time = DatetimeUtil.getNowTime();
-		String note = "";
+		String note = "_";
 		
 		mPostBean = new SpitslotBean(id, company_id, company_name, address, station_id, station_name, user_id, user_name, date_view, description, praise_count, record_time, note);
 		

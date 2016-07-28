@@ -59,6 +59,7 @@ public class SpitslotPostTask extends AsyncTask<String, Void, Integer>{
 					"&praise_count=" + bean.getPraise_count() + //
 					"&record_time=" + bean.getRecord_tiem() + //
 					"&note=" + URLEncoder.encode(bean.getNote(), "UTF-8");
+			
 			result = HttpRequestAndPostUtil.post(Configuration.HOST + "/postspitslot.php", parames);
 			
 		} catch (SocketTimeoutException e){

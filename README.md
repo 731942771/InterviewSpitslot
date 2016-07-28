@@ -14,6 +14,10 @@ apk文件下载及图片展示|Download thie apk file and pictures show：<a hre
 <li>提供给求职者一个抒发情感，互相交流的平台。|To express the mood, make new friends.
 <li>面试天天有，今年不太顺，奇葩面试官，我等吐你一脸。|Away from the odd the interviewer. Have a fun!
 
+##v1.2:
+<li>解决昵称修改时因服务器太烂无法使用的问题；|Fix a bug it is the new nickname can't use bucause the server too sucks.
+<li>稍稍优化。|A little bit optimize.
+
 ##v1.0:
 <li>发表长篇骚文；|Long beautiful articles published.
 <li>发表短篇口水；|Spitting ptysis. ;)

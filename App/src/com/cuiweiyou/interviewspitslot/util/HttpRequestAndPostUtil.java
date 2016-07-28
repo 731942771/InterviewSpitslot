@@ -75,11 +75,14 @@ public class HttpRequestAndPostUtil {
 	 * @throws MalformedURLException 
 	 */
 	public static int post(String url, String parames) throws MalformedURLException, ConnectException, IOException {
+//		Log.e("ard", "地址：" + url + "，参数：" + parames);
+		
 		String result = null;
 		
 		HttpURLConnection conn = (HttpURLConnection) new URL(url).openConnection();
-		conn.setConnectTimeout(10 * 1000);
-		conn.setReadTimeout(10 * 1000);
+		conn.setRequestProperty("Connection", "Keep-Alive");// 维持长连接
+		conn.setConnectTimeout(30 * 1000);
+		conn.setReadTimeout(30 * 1000);
 		conn.setRequestMethod("POST");
 		conn.setDoInput(true);
 		conn.setDoOutput(true);
@@ -89,7 +92,6 @@ public class HttpRequestAndPostUtil {
 		
 //			conn.setRequestProperty("Accept", "application/json, text/javascript, */*; q=0.01");
 //			conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-//			conn.setRequestProperty("Connection", "Keep-Alive");// 维持长连接
 //			conn.setRequestProperty("Charset", "UTF-8");
 //			conn.setRequestProperty("Content-Length", "" + args.length);// 没问题
 		
@@ -111,6 +113,8 @@ public class HttpRequestAndPostUtil {
 			in.close();
 			
 			result = buffer.toString();
+			
+//			Log.e("ard", "post回的结果：" + result);
 		} else {
 			result = "0";
 		}

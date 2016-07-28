@@ -12,8 +12,8 @@ public class Configuration {
 	
 	/** 服务端<br/>
 	 */
-	public static String HOST = "http://localhost";
+	public static String HOST = "http://192.168.1.100";
 	
 	/** 新版本检测地址 */
-	public static String UPDATE = "http://localhost/update";
+	public static String UPDATE = "http://192.168.1.100/newversion.html";
 }

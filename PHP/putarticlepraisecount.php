@@ -11,14 +11,12 @@ if ( is_array ($_GET) && count ($_GET) > 0 ) { //判断是否有Get参数
 
 $connect = mysql_connect("localhost", "数据库", "密码");
 if($connect) {
-
 	mysql_query("set character set 'utf8'");//读库 
 	mysql_query("set names 'utf8'");//写库 
+	mysql_select_db("库", $connect);
 
-	mysql_select_db("库", $connect);  
-  
 	$sql = sprintf("
-		UPDATE	is_article
+		UPDATE is_article
 		SET praise_count = {$count}
 		WHERE id = {$id}
 	");

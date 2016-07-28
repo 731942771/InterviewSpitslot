@@ -32,12 +32,10 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
 $connect = mysql_connect("localhost", "数据库", "密码");
 if($connect) {
-
 	mysql_query("set character set 'utf8'");//读库 
 	mysql_query("set names 'utf8'");//写库 
+	mysql_select_db("库", $connect);
 
-	mysql_select_db("库", $connect);  
-  
 	$sql = sprintf("
 		INSERT INTO is_feedback (
 			feed,

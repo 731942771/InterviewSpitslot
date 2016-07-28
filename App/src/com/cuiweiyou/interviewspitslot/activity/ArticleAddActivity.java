@@ -1,5 +1,7 @@
 package com.cuiweiyou.interviewspitslot.activity;
 
+import java.net.URLConnection;
+
 import com.cuiweiyou.interviewspitslot.R;
 import com.cuiweiyou.interviewspitslot.app.RootApplication;
 import com.cuiweiyou.interviewspitslot.back.CheckUserBack;
@@ -102,8 +104,8 @@ public class ArticleAddActivity extends Activity implements OnClickListener, Tex
 		}
 		
 		String text = mPen.getText().toString().replace(" ", "");
-		if(text.length() < 233){
-			Toast.makeText(this, "不到800个字算不得极品骚文", 0).show();
+		if(text.length() < 333){
+			Toast.makeText(this, "不到333个字算不得极品骚文", 0).show();
 			
 			return;
 		} else if (text.length() > 1233){
@@ -123,34 +125,16 @@ public class ArticleAddActivity extends Activity implements OnClickListener, Tex
 	@Override
 	public void afterTextChanged(Editable s) {
 		int count = mPen.getText().toString().length();
-		mCount.setText((1500 - count) + ""); // 最长字数1500
+		mCount.setText((1233 - count) + ""); // 最长字数1500
 
-		if(count > 1500){
-			Toast.makeText(RootApplication.getAppContext(), "2333333333", 0).show();
+		if(count > 1232){
+			Toast.makeText(RootApplication.getAppContext(), "话不在多，多说无益", 0).show();
 		}
 	}
 
 	@Override
 	public void getUserStatus(int flag) {
-		String textttt = mTitle.getText().toString().replace(" ", "");
-		if(textttt.length() < 1){
-			Toast.makeText(this, "一个字都不给我！", 0).show();
-			
-			return;
-		} else if (textttt.length() > 60){
-			textttt = textttt.substring(0, 60);
-		}
-		
-		String text = mPen.getText().toString().replace(" ", "");
-		if(text.length() < 233){
-			Toast.makeText(this, "不到800个字算不得极品骚文", 0).show();
-			
-			return;
-		} else if (text.length() > 1233){
-			text = text.substring(0, 1233);
-		}
-		
-		new ArticlePostTask(this, this).execute(textttt, text);
+		doPost();
 	}
 
 	@Override

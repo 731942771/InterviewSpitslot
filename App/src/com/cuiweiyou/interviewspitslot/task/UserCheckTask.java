@@ -12,13 +12,14 @@ import com.cuiweiyou.interviewspitslot.util.SharedPrefUtil;
 
 import android.app.Activity;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
 
 /** 校验吐槽者的id */
 public class UserCheckTask extends AsyncTask<String, Void, Integer> {
 	
 	private String username;
-	private int userid;
+	private int userid = 0;
 	
 	private CheckUserBack back;
 	private int flag;
@@ -36,6 +37,7 @@ public class UserCheckTask extends AsyncTask<String, Void, Integer> {
 		
 		try {
 			String id = HttpRequestAndPostUtil.getJsonObject(Configuration.HOST + "/getuserid.php?name=" + username);
+			
 			userid = Integer.parseInt(id);
 		} catch (SocketTimeoutException e){
 			aty.runOnUiThread(new Runnable() {
@@ -65,12 +67,21 @@ public class UserCheckTask extends AsyncTask<String, Void, Integer> {
 			e.printStackTrace();
 		}
 		
-		return 0;
+		return userid;
 	}
 
 	@Override
 	protected void onPostExecute(Integer result) {
 		super.onPostExecute(result);
+		
+		if(0 == result){
+			Toast.makeText(RootApplication.getAppContext(), "这昵称被因特网拒绝了", 0).show();
+			
+			aty = null;
+			back = null;
+			
+			return;
+		}
 		
 		SharedPrefUtil.setUserID(userid);
 		SharedPrefUtil.setUserName(username);

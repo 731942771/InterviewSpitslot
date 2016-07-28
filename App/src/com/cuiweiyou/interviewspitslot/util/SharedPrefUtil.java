@@ -32,6 +32,14 @@ public class SharedPrefUtil {
 		edit.putInt("user_id", id);
 		edit.commit();
 	}
+	
+	/** 查询当前用户id。返回0表示没有用户id */
+	public static int getUserID() {
+		if(null == mSP)
+			getSP();
+		
+		return mSP.getInt("user_id", 0);
+	}
 
 	/** 保存当前用户name */
 	public static void setUserName(String name) {
@@ -41,14 +49,6 @@ public class SharedPrefUtil {
 		Editor edit = mSP.edit();
 		edit.putString("user_name", name);
 		edit.commit();
-	}
-	
-	/** 查询当前用户id。返回0表示没有用户id */
-	public static int getUserID() {
-		if(null == mSP)
-			getSP();
-		
-		return mSP.getInt("user_id", 0);
 	}
 
 	/** 查询当前用户name。返回""表示没有用户 */

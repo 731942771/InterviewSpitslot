@@ -19,11 +19,11 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 	$company_id = isset($arr['company_id']) ? $arr['company_id'] : ""; // post过来的数据key
 	$station_id = isset($arr['station_id']) ? $arr['station_id'] : "";
 	$user_id = isset($arr['user_id']) ? $arr['user_id'] : "";
-	$date_view = isset($arr['date_view']) ? $arr['date_view'] : "";
-	$description = isset($arr['description']) ? $arr['description'] : "";
-	$praise_count = isset($arr['praise_count']) ? $arr['praise_count'] : "";
-	$record_time = isset($arr['record_time']) ? $arr['record_time'] : "";
-	$note = isset($arr['note']) ? $arr['note'] : "";
+	$date_view = isset($arr['date_view']) ? $arr['date_view'] : "2016-07-27";
+	$description = isset($arr['description']) ? $arr['description'] : "_";
+	$praise_count = isset($arr['praise_count']) ? $arr['praise_count'] : "0";
+	$record_time = isset($arr['record_time']) ? $arr['record_time'] : "2016-07-27";
+	$note = isset($arr['note']) ? $arr['note'] : "_";
 
 } else {
 	echo 0;
@@ -32,12 +32,10 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
 $connect = mysql_connect("localhost", "数据库", "密码");
 if($connect) {
-
 	mysql_query("set character set 'utf8'");//读库 
 	mysql_query("set names 'utf8'");//写库 
+	mysql_select_db("库", $connect);
 
-	mysql_select_db("库", $connect);  
-  
 	$sql = sprintf("
 		INSERT INTO 
 			is_spitslot 

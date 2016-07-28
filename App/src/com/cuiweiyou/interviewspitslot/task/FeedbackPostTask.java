@@ -75,6 +75,8 @@ public class FeedbackPostTask extends AsyncTask<String, Void, Integer> {
 		
 		if(0 != result){
 			Toast.makeText(aty, "感谢反馈", 0).show();
+		} else {
+			Toast.makeText(aty, "感谢反馈", 0).show();
 		}
 		
 		aty = null;

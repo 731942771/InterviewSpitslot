@@ -3,6 +3,7 @@ package com.cuiweiyou.interviewspitslot.task;
 import java.io.IOException;
 import java.net.ConnectException;
 import java.net.MalformedURLException;
+import java.net.URLEncoder;
 
 import com.cuiweiyou.interviewspitslot.back.PostArticleBack;
 import com.cuiweiyou.interviewspitslot.conf.Configuration;
@@ -12,6 +13,7 @@ import com.cuiweiyou.interviewspitslot.util.SharedPrefUtil;
 
 import android.app.Activity;
 import android.os.AsyncTask;
+import android.util.Log;
 import android.widget.Toast;
 
 /**
@@ -38,16 +40,18 @@ public class ArticlePostTask extends AsyncTask<String, Void, Integer> {
 	protected Integer doInBackground(String... params) {
 		String title = params[0];
 		String article = params[1];
-		String args = 
-				"user_id=" + SharedPrefUtil.getUserID() +
-				"&title=" + title + 
-				"&article=" + article +
-				"&date_add=" + DatetimeUtil.getNowDate() + 
-				"&description=" + 
-				"&note=";
 		int result = 0;
 		
 		try {
+			Log.e("ard", "长度：" + article.length());
+			String args = 
+					"user_id=" + SharedPrefUtil.getUserID() +
+					"&title=" + title + 
+					"&article=" + article +
+					"&date_add=" + DatetimeUtil.getNowDate() + 
+					"&description=_" + 
+					"&note=_";
+			
 			result = HttpRequestAndPostUtil.post(Configuration.HOST + "/postarticle.php", args);
 		}  catch (MalformedURLException e) {
 			aty.runOnUiThread(new Runnable() {
@@ -85,6 +89,8 @@ public class ArticlePostTask extends AsyncTask<String, Void, Integer> {
 		
 		if(0 != result){
 			back.getResult(result);
+		} else {
+			Toast.makeText(aty, "骚文让网有的晕，再陶冶一下", 0).show();
 		}
 		
 		aty = null;
